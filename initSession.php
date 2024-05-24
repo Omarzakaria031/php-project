@@ -9,5 +9,6 @@
     $projectsManager = &$_SESSION['projectManager'];
 
 
-    // print_r($projectsManager->record);
+    // $projectsManager->setStudentProfileManager(new StudentProfileManager());
+
 ?>
