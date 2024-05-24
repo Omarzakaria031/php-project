@@ -64,6 +64,7 @@
 
             <!-- display the available student as a check box to assigned to the empty project -->
 
+
             <?php
             if (isset($_POST['display-student-assigned'])) {
                 $projectSelected = $_POST['projectSelected'];
@@ -77,6 +78,7 @@
                 }
             }
 
+
             // add student to project
             if (isset($_POST['add-students'])) {
                 $projectSelected = $_POST['projectSelected'];
@@ -86,7 +88,7 @@
                     if (count($projectsManager->record[$projectSelected]) < 2) {
                         $projectsManager->addStudentToProject($projectSelected, $student);
                     } else {
-                        echo "<span class ='handle-error'>Can't be added!Any project can't take more than 2 students! *</span><br>";
+                        echo "<span class ='handle-error'>Sorry Can't be added! Any project can't take more than 2 students! *</span><br>";
                     }
                 }
                 echo "<span>Student added to project</span>";
@@ -96,7 +98,6 @@
             
             <input type="submit" name="add-students" value="add student" class = "ASSIGN-BUTTON"><br>
             
-
             <div class="button-container">
                 <button style= "width:80%" class = "ASSIGN-BUTTON" name = "btn-back"><a href = "home.php">Back</a></button>
             <div>
