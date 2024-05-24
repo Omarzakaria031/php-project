@@ -30,9 +30,10 @@
                 </select>
 
                 <span>
-                    <?php if(isset($msgError)){
-                        echo $msgError;
-                    } 
+                    <?php 
+                        if(isset($msgError)){
+                            echo $msgError;
+                        } 
                     ?>
                 </span>
 
@@ -49,9 +50,10 @@
                 <?php endforeach; ?>
                 
                 <span>
-                    <?php if(isset($msgDone)){
-                        echo $msgDone;
-                    } 
+                    <?php 
+                        if(isset($msgDone)){
+                            echo $msgDone;
+                        } 
                     ?>
                 </span>
 
