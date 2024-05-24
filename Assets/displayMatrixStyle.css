@@ -1,0 +1,206 @@
+/*Button 'back'*/
+
+a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.container {
+    position: relative;
+}
+
+.button-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.btn-donate {
+    --clr-font-main: hsla(0 0% 20% / 100);
+    --btn-bg-1: hsla(194 100% 69% / 1);
+    --btn-bg-2: hsla(217 100% 56% / 1);
+    --btn-bg-color: hsla(360 100% 100% / 1);
+    --radii: 0.5em;
+    cursor: pointer;
+    padding: 0.9em 1.4em;
+    width: 30%;
+    height: 3em;
+    font-size: var(--size, 1rem);
+    font-family: "Segoe UI", system-ui, sans-serif;
+    font-weight: 500;
+    transition: 0.8s;
+    background-size: 280% auto;
+    background-image: linear-gradient(325deg, var(--btn-bg-2) 0%, var(--btn-bg-1) 55%, var(--btn-bg-2) 90%);
+    border: none;
+    border-radius: var(--radii);
+    color: var(--btn-bg-color);
+    box-shadow: 0px 0px 20px rgba(71, 184, 255, 0.5), 0px 5px 5px -1px rgba(58, 125, 233, 0.25), inset 4px 4px 8px rgba(175, 230, 255, 0.5), inset -4px -4px 8px rgba(19, 95, 216, 0.35);
+}
+
+.btn-donate:hover {
+    background-position: right top;
+}
+
+.btn-donate:is(:focus, :focus-visible, :active) {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--btn-bg-color), 0 0 0 6px var(--btn-bg-2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .btn-donate {
+        transition: linear;
+    }
+}
+
+
+/*Table of students and projects */
+
+.wave-container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(74, 157, 236, 0.2), rgba(74, 157, 236, 0.2)), radial-gradient(circle at 50% 0, rgba(0, 123, 255, 0.15), transparent 50%);
+    background-size: 100% 40px, 100% 40px;
+    animation: wave 3s linear infinite;
+}
+
+@keyframes wave {
+    0% {
+        background-position: 0 0, 0 0;
+    }
+
+    50% {
+        background-position: 100% 0, 100% 0;
+    }
+
+    100% {
+        background-position: 0 0, 0 0;
+    }
+}
+
+.table {
+    border-collapse: collapse;
+    width: 40%;
+    background-color: #F3F3F3;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.table th,
+.table td {
+    border: 1px solid rgba(19, 95, 216, 0.5);
+    padding: 15px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: normal;
+    color: #007bff;
+    background-color: rgba(74, 157, 236, 0.2);
+}
+
+.table th {
+    background-color: #F3F3F3;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.table tr:nth-child(even) {
+    background-color: #F3F3F3;
+}
+
+.table tr,td,th:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.table th:first-child,
+.table td:first-child {
+    border-radius: 5px 0 0 5px;
+}
+
+.table th:last-child,
+.table td:last-child {
+    border-radius: 0 5px 5px 0;
+}
+
+.table tfoot {
+    background-color: #007bff;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+}
+
+.table tfoot td {
+    padding: 15px;
+    border: none;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #F3F3F3;
+}
+
+.table-bordered th,
+.table-bordered td {
+    border: 1px solid rgba(19, 95, 216, 0.5);
+}
+
+.table-bordered th {
+    border-bottom-width: 2px;
+}
+
+@media (max-width: 768px) {
+
+    .table th,
+    .table td {
+        padding: 10px;
+    }
+
+    .table th {
+        font-size: 14px;
+    }
+
+    .table tfoot {
+        display: none;
+    }
+}
+
+.wave svg path {
+    animation: wave 0.5s ease-in-out infinite;
+}
+
+@keyframes wave {
+    0% {
+        d: path("M0,160L30,170.7C60,181,120,203,180,202.7C240,203,300,181,360,176C420,171,480,181,540,181.3C600,181,660,171,720,160C780,149,840,139,900,154.7C960,170,1020,203,1080,192C1140,181,1200,139,1260,128C1320,117,1380,139,1410,144L1440,144L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z");
+    }
+
+    50% {
+        d: path("M0,160L30,170.7C60,181,120,203,180,202.7C240,203,300,181,360,176C420,171,480,181,540,181.3C600,181,660,171,720,160C780,149,840,139,900,154.7C960,170,1020,203,1080,192C1140,181,1200,139,1260,128C1320,117,1380,139,1410,144L1440,144L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z");
+    }
+
+    100% {
+        d: path("M0,160L30,170.7C60,181,120,203,180,202.7C240,203,300,181,360,176C420,171,480,181,540,181.3C600,181,660,171,720,160C780,149,840,139,900,154.7C960,170,1020,203,1080,192C1140,181,1200,139,1260,128C1320,117,1380,139,1410,144L1440,144L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z");
+    }
+}

@@ -1,0 +1,203 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-image: url('./pexels-monstera-production-6289029.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    /* display: flex;
+    justify-content: center; 
+    align-items: center; */
+}
+
+
+/* 
+Assign projects page
+*/
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsla(217, 100%, 56%, 1);
+}
+
+.text {
+    font-size: 3em;
+    color: white;
+    text-align: center;
+}
+
+
+.assignement-container {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: transparent;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+span {
+    font-size: 18px;
+}
+
+.handle-error{
+    color: red;
+}
+
+.selected-options {
+    padding: 7px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    font-size: 16px;
+    width: 200px;
+    margin: 0 0 10px 25px;
+
+}
+
+.checkbox-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.checkbox-container label {
+    box-sizing: border-box;
+    /* Include padding and border in the width */
+    padding: 5px;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid hsla(217, 100%, 56%, 1);
+    border-radius: 3px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+input[type="checkbox"]:checked {
+    background-color: hsla(217, 100%, 56%, 1);
+    animation: checkboxAnimation 0.5s ease-in-out, returnAnimation 0.5s ease-in-out 0.5s;
+}
+
+@keyframes checkboxAnimation {
+    0% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.2);
+    }
+
+    50% {
+        transform: scale(0.9);
+    }
+
+    75% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes returnAnimation {
+    0% {
+        transform: scale(1) rotateY(0deg);
+    }
+
+    50% {
+        transform: scale(1) rotateY(180deg);
+    }
+
+    100% {
+        transform: scale(1) rotateY(360deg);
+    }
+}
+
+
+input[type="checkbox"]:checked::after {
+    content: "\2713";
+    font-size: 16px;
+    position: absolute;
+    top: -3px;
+    left: 2px;
+    margin-bottom: 5px;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.ASSIGN-BUTTON {
+    --clr-font-main: hsla(0 0% 20% / 100);
+    --btn-bg-1: hsla(194 100% 69% / 1);
+    --btn-bg-2: hsla(217 100% 56% / 1);
+    --btn-bg-color: hsla(360 100% 100% / 1);
+    --radii: 0.5em;
+    cursor: pointer;
+    padding: 0.9em 1.4em;
+    width: 100%;
+    height: 3em;
+    font-size: var(--size, 1rem);
+    font-family: "Segoe UI", system-ui, sans-serif;
+    font-weight: 500;
+    transition: 0.8s;
+    background-size: 280% auto;
+    background-image: linear-gradient(325deg, var(--btn-bg-2) 0%, var(--btn-bg-1) 55%, var(--btn-bg-2) 90%);
+    border: none;
+    border-radius: var(--radii);
+    color: var(--btn-bg-color);
+    box-shadow: 0px 0px 20px rgba(71, 184, 255, 0.5), 0px 5px 5px -1px rgba(58, 125, 233, 0.25), inset 4px 4px 8px rgba(175, 230, 255, 0.5), inset -4px -4px 8px rgba(19, 95, 216, 0.35);
+}
+
+.ASSIGN-BUTTON:hover {
+    background-position: right top;
+}
+
+.ASSIGN-BUTTON:is(:focus, :focus-visible, :active) {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--btn-bg-color), 0 0 0 6px var(--btn-bg-2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ASSIGN-BUTTON {
+        transition: linear;
+    }
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.inline-container {
+    width: 100%;
+    display: inline-block;
+    margin: 3px;
+}
+
+/*Update on checkbox*/
+
+.checkbox-container{
+    align-items: center;
+}
+
+.button-container{
+    width: 40%;
+    display: inline-block;
+    margin-top: 10px;
+}
